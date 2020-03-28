@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slider</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <div id="canvas"></div>
+
+    <div id="content">
+
+        <h1 id="title">My awesome slider</h1>
+
+        <!-- drag slider -->
+      <div id="planes">
+
+         <div class="plane-wrapper">
+            <span class="plane-title">Slide 1</span>
+                <div class="plane">
+                    <img src="./assets/img/img1.jpg" alt="First slide" />
+                </div>
+         </div>
+
+         <div class="plane-wrapper">
+            <span class="plane-title">Slide 2</span>
+                <div class="plane">
+                    <img src="./assets/img/img2.jpg" alt="Second slide" />
+                </div>
+         </div>
+
+         <div class="plane-wrapper">
+            <span class="plane-title">Slide 3</span>
+                <div class="plane">
+                    <img src="./assets/img/img3.jpg" alt="Third slide" />
+                </div>
+         </div>
+
+      </div>
+
+        <div id="drag-tip">
+            Drag to explore
+        </div>
+
+   </div>
+
+    <script src="./assets/js/vendor/anime.min.js"></script>
+    <script src="./assets/js/vendor/curtains.min.js"></script>
+    <script src="slider.setup.js"></script>
+    
+</body>
+</html>
