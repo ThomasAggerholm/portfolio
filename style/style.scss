@@ -67,8 +67,9 @@ h1,
         &--small {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-out;
             transition-property: opacity, transform;
+            transition-delay: 2.5s;
             &.animated {
                 opacity: 1;
                 transform: translateY(0);
@@ -79,14 +80,10 @@ h1,
             font-weight: 600;
             font-size: 4vw;
             line-height: 1;
-            transition-delay: 2.2s;
+            transition-duration: 0.7s;
             @media screen and (max-width: 512px) {
                 font-size: 14vw;
             }
-        }
-
-        &--small {
-            transition-delay: 2s;
         }
     }
 
@@ -107,10 +104,12 @@ h1,
         }
 
         span {
+            display: inline-block;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.5s ease-in-out;
             transition-property: opacity, transform;
+            transition-delay: 1s;
             &.animated {
                 opacity: 1;
                 transform: translateY(0);
@@ -131,6 +130,23 @@ h1,
         @media screen and (max-width: 512px) {
             width: 100%;
             opacity: 0;
+        }
+    }
+}
+
+.test-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 2s ease-in-out;
+        &.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }
