@@ -1,3 +1,14 @@
-body {
-    background-color: blue;
-}
+/* ----- FONTS ----- */
+@import 'typografi.scss';
+
+/* ----- VARS ----- */
+@import 'vars.scss';
+
+/* ----- BASE ----- */
+@import 'base.scss';
+
+/* ----- UTILITY ----- */
+@import 'utility.scss';
+
+/* ----- HERO ----- */
+@import 'hero.scss';

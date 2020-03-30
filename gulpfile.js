@@ -1,6 +1,8 @@
 var gulp = require('gulp')
 var browserSync = require('browser-sync').create()
 var sass = require('gulp-sass')
+var webpack = require('webpack-stream')
+var cleanCss = require('gulp-clean-css')
 
 let paths = {
     // Destination for your files
@@ -18,17 +20,6 @@ let paths = {
     }
 }
 
-function script() {
-    return (
-        gulp
-            .src(paths.jsFiles.main)
-            // Send them to the destination
-            .pipe(gulp.dest(paths.jsFiles.dest))
-            // Start bS stream
-            .pipe(browserSync.stream())
-    )
-}
-
 function html() {
     return (
         gulp
@@ -42,7 +33,26 @@ function scss() {
         gulp
             .src(paths.scss.main)
             .pipe(sass())
+            .pipe(cleanCss())
             .pipe(gulp.dest(paths.scss.dest))
+            .pipe(browserSync.stream())
+    )
+}
+
+function script() {
+    return (
+        gulp
+            .src(paths.jsFiles.main)
+            // Send them to the destination
+            .pipe(
+                webpack({
+                    output: {
+                        filename: 'app.js'
+                    }
+                })
+            )
+            .pipe(gulp.dest(paths.jsFiles.dest))
+            // Start bS stream
             .pipe(browserSync.stream())
     )
 }
