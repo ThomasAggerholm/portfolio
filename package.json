@@ -23,7 +23,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-preset-env": "^6.7.0",
     "webpack-stream": "^5.2.1"
   }
